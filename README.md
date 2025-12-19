@@ -1,71 +1,105 @@
+# AIMS Reimagined 🎓
 
-# Getting Started with Create React App
+**AIMS Reimagined** is a high-performance, mobile-first Academic Information Management System. It modernizes the student experience by providing a clean, intuitive interface for managing academic records, course registration, and placement opportunities.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Built as a **Progressive Web App (PWA)**, it offers a native-app feel on both desktop and mobile, ensuring students can access their data anytime, even with limited connectivity.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Core Features
 
-### `npm start`
+* **Smart Dashboard:** At-a-glance view of GPA, attendance, pending fees, and upcoming events.
+* **Intelligent Course Registration:** Real-time credit validation, seat availability tracking, and "Add/Drop" functionality with automated deadline logic.
+* **Career & Placements:** Integrated portal for job applications, resume management, and CGPA-based eligibility filtering.
+* **Account Management:** Self-service profile with document uploads (Aadhaar, Marksheets) and admin-locked official fields.
+* **Performance Tracking:** Detailed semester-wise grade breakdowns and cumulative GPA calculations.
+* **PWA Integration:** Fully installable with offline caching via Service Workers.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+* **Library:** React 19 (Latest)
+* **Styling:** Tailwind CSS (Utility-first CSS)
+* **Routing:** React Router 7
+* **Icons:** Lucide React & Heroicons
+* **State:** LocalStorage-based persistence (Mock Backend)
+* **PWA:** Service Workers, Manifest API
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🎨 UI/UX Design: Nielsen’s 10 Usability Heuristics
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This project was developed with a strict focus on **Jakob Nielsen’s 10 Usability Heuristics** to ensure a friction-less user experience.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Heuristic | Implementation in AIMS Reimagined |
+| --- | --- |
+| **#1: Visibility of system status** | Progress bars in Course Registration show live credit limits; status badges (Applied, Pending, Resolved) update instantly. |
+| **#2: Match between system and real world** | Uses standard academic terminology (Credits, CGPA, Backlog, Semester) and logical iconography (briefcase for jobs, heart for favorites). |
+| **#3: User control and freedom** | Students can "Drop" courses before submission and use the "Cancel" button in Account settings to undo changes without saving. |
+| **#4: Consistency and standards** | Standardized layout components (Sidebar/Navbar) and button styles ensure a predictable interface across all 10+ pages. |
+| **#5: Error prevention** | Logic prevents adding courses if credits exceed the limit or seats are full. Login requires a math-based captcha to prevent bot errors. |
+| **#6: Recognition rather than recall** | Tooltips (ⓘ) on course tiles show full details on hover, so users don't have to memorize prerequisites or faculty names. |
+| **#7: Flexibility and efficiency of use** | Search bars and multi-filters (Category/Semester) allow students to find specific courses or companies in seconds. |
+| **#8: Aesthetic and minimalist design** | A card-based UI removes clutter. Secondary information is hidden in modals (e.g., Company details) to maintain focus. |
+| **#9: Help users recognize/recover from errors** | Visual feedback for failed logins and clear red text indicators for "Limit Exceeded" or "Incorrect Captcha." |
+| **#10: Help and documentation** | Important dates are highlighted in the Registration and Inbox pages, acting as a guide for time-sensitive tasks. |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 📦 Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Prerequisites
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Node.js (v18 or higher)
+* npm or yarn
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Clone the repo:**
+```bash
+git clone https://github.com/your-username/aims-reimagined.git
+cd aims-reimagined
 
-## Learn More
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. **Install dependencies:**
+```bash
+npm install
 
-### Code Splitting
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+3. **Run the App:**
+```bash
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Open [http://localhost:3000](https://www.google.com/search?q=http://localhost:3000) to view it in the browser.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📁 Project Structure
 
-### Deployment
+```text
+src/
+├── components/     # Atomic UI components (Buttons, Inputs, Modals)
+├── data/           # Mock databases (Users, Courses, Placements)
+├── layouts/        # Shared page structures (Sidebar/Navbar wrappers)
+├── pages/          # Individual route views (Dashboard, Account, etc.)
+├── utils/          # Auth logic, Mock API wrappers, and helpers
+└── App.js          # Main router and Protected Route configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📱 PWA Features
+
+* **Installable:** Prompts users to "Install App" for a standalone experience.
+* **Service Worker:** Caches essential assets (icons, manifest, index.html) for faster load times.
+* **Responsive:** Fully optimized for mobile, tablet, and desktop viewports.
+
